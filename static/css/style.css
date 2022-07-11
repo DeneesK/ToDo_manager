@@ -9,6 +9,7 @@ nav {
 
 }
 
+
 .menu  {
     display: flex;
     align-content: center;
@@ -16,9 +17,27 @@ nav {
 
 }
 
+.menu .menu_btn {
+    display: flex;
+}
+
+.menu .logo-ref {
+    display: flex;
+}
+
 .menu a {
     margin-right: 5px;
     text-decoration: none;
+}
+
+.menu .menu_btn .logo_title {
+    color:rgb(122, 122, 122);
+    text-align: center;
+    line-height: 36px;
+} 
+
+.menu .menu_btn img {
+    margin-right: 5px;
 }
 
 .logout {
