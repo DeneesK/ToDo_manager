@@ -1,0 +1,39 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="view-block">
+        <div class="view-header">
+            {{ error }}
+            <h4>{{ todo.title }}</h4>
+        </div>
+        <div class="view-form">
+            {% if todo.date_completed %}
+            <h5>{{ todo.memo }}</h5>
+            <h6>Completed: {{ todo.date_completed|date:'M j Y H:i' }}</h6>
+            {% else %}
+            <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+        </div>
+            <div class="col-md-3">
+                <div class="view-btns">
+                    <button type="submit" name="button" class="btn btn-outline-warning">Save</button> 
+                    </form>
+
+                    <form method="POST" action="{% url 'completetodo' todo.id %}">
+                    {% csrf_token %}
+                    <button type="submit" name="button" class="btn btn-outline-success">Completed</button> 
+                    </form>
+
+                    <form method="POST" action="{% url 'deletetodo' todo.id %}">
+                    {% csrf_token %}
+                    <button type="submit" name="button" class="btn btn-outline-danger">Delete</button> 
+                    </form>
+                </div>
+            </div>
+
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
