@@ -1,6 +1,8 @@
 {% extends 'todo/base.html' %}
 
+
 {% block content %}
+{% if not user.is_authenticated %}
 <div class="row">
     <div class="col-md-12">
         <div class="greeting">Hi! To get started you need to 
@@ -13,8 +15,9 @@
                 </a>
             </div>
         </div>
-    </div>
-    
+    </div>  
 </div>
-
+{% else %}
+<div class="greeting">Maybe this is a great time to complete the TODO or create a new one?</div>
+{% endif %} 
 {% endblock %}
