@@ -11,8 +11,8 @@
             {% for todo in todos %}
             <li>
                 <a href="{% url 'viewtodo' todo.id %}">
-                    {% if todo.important %}<div class="current-important">{{ todo.title }} {% if todo.memo %} - {{ todo.memo }} </div> {% endif %} {% endif %} 
-                    {% if not todo.important %}<div class="current-not-imortant"> {{ todo.title }} {% if todo.memo %} - {{ todo.memo }} </div> {% endif %} {% endif %}           
+                    {% if todo.important %}<div class="current-important">{{ todo.title }} {% if todo.memo %} - {{ todo.memo |truncatechars:72}} </div> {% endif %} {% endif %} 
+                    {% if not todo.important %}<div class="current-not-imortant"> {{ todo.title }} {% if todo.memo %} - {{ todo.memo |truncatechars:72}} </div> {% endif %} {% endif %}           
                 </a>
             </li>
             {% endfor %}

@@ -9,9 +9,31 @@ nav {
 
 }
 
+.password-reset-done {
+    margin-top: 50px;
+    color: rgb(122, 122, 122);
+}
+
+.email-sent {
+    font-size: 20px;
+}
 
 .form-control {
     width: 40%;
+}
+
+.reset-password {
+    margin-top: 50px;
+    color: rgb(122, 122, 122);    
+}
+
+.foggoten {
+    font-size: 16px;
+    margin-bottom: 20px;    
+}
+
+.send-mail-btn {
+    margin-top: 20px;
 }
 
 .menu  {
@@ -105,13 +127,15 @@ nav {
 
 .sing-up-header {
     margin: 0 auto;
-    text-align: center;
 }
 
 .sing-up-form {
     margin-top: 30px;
     display: flex;
-    justify-content: center;
+}
+
+.login_form_fields .form-control {
+    width: 100%;
 }
 
 .completed-block {
@@ -180,7 +204,7 @@ nav {
     font-weight: bold;
 }
 
-.view-form h5, h6 {
+.view-form h6 {
     color:rgba(0, 76, 255, 0.841);
 }
 

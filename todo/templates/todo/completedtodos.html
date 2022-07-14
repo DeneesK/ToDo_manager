@@ -11,8 +11,8 @@
                 <li>
                     <div class="completed-todo">
                         <a href="{% url 'viewtodo' todo.id %}">
-                            {% if todo.important %}<div class="copleted-important">{{ todo.title }} {% if todo.memo %} - {{ todo.memo }}  {% endif %} {{ todo.date_completed|date:'M j Y H:i' }}</div> {% endif %} 
-                            {% if not todo.important %}<div class="completed-not-imortant"> {{ todo.title }} {% if todo.memo %} - {{ todo.memo }} {% endif %} {{ todo.date_completed|date:'M j Y H:i' }}</div>   {% endif %} 
+                            {% if todo.important %}<div class="copleted-important form">{{ todo.title }} {% if todo.memo %} - {{ todo.memo | truncatechars:54 }}  {% endif %} {{ todo.date_completed|date:'M j Y H:i' }}</div> {% endif %} 
+                            {% if not todo.important %}<div class="completed-not-imortant"> {{ todo.title }} {% if todo.memo %} - {{ todo.memo | truncatechars:54 }} {% endif %} {{ todo.date_completed|date:'M j Y H:i' }}</div>   {% endif %} 
                         </a>
                     </div>
                 </li>

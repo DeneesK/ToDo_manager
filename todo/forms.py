@@ -1,6 +1,8 @@
 from django.forms import ModelForm
 from .models import ToDo
 from django import forms
+from django.utils.translation import gettext_lazy as _
+
 
 class FormTodo(ModelForm):
     class Meta:
@@ -10,3 +12,4 @@ class FormTodo(ModelForm):
             'memo': forms.Textarea(attrs={"class": "form-control"}),
             'title': forms.TextInput(attrs={"class": "form-control"}) 
         }
+

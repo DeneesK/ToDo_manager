@@ -9,7 +9,9 @@
         </div>
         <div class="view-form">
             {% if todo.date_completed %}
-            <h5>{{ todo.memo }}</h5>
+            {% if todo.memo %}
+            <h5 class="form-control">{{ todo.memo }}</h5>
+            {% endif %}
             <h6>Completed: {{ todo.date_completed|date:'M j Y H:i' }}</h6>
             {% else %}
             <form method="POST">

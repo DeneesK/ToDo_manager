@@ -129,3 +129,11 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = '/login'
+
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+EMAIL_BACKEND = 'django_ses.SESBackend'
+AWS_ACCESS_KEY_ID = os.environ['DjsngoMail_Key_ID']
+AWS_SECRET_ACCESS_KEY = os.environ['DjsngoMail_Key_Asses']
+AWS_SES_REGION_NAME = 'eu-west-3' #(ex: us-east-2)
+AWS_SES_REGION_ENDPOINT ='email.eu-west-3.amazonaws.com' #(ex: email.us-east-2.amazonaws.com)

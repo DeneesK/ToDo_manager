@@ -33,7 +33,13 @@
                 </div>
                 <div class="logout col-md-4">
                     {% if user.is_authenticated  %}
-                    <div class="user_name_loggin">Loged In as <span>{{ user.username }}</span></div> 
+                    <div class="user_name_loggin">Loged In as 
+                        <span>
+                            <a href="{% url 'currenttodos' %}">
+                                {{ user.username }}
+                            </a>
+                        </span>
+                    </div> 
                     <form  action="{% url 'logoutuser' %}" method="POST">
                     {% csrf_token %}
                     <button type="submit" class="btn btn-outline-primary">LogOut</button>

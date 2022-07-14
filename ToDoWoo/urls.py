@@ -14,7 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.contrib.auth import views as auth_views
+from django.urls import path, include
 from todo import views
 
 
@@ -32,4 +33,12 @@ urlpatterns = [
     path('todo/<int:todo_pk>/complete', views.completetodo, name = 'completetodo'),
     path('todo/<int:todo_pk>/delete', views.deletetodo, name = 'deletetodo'),
     path('completed/', views.completedtodos, name = 'completedtodos'),
+    #PASSWORD RESET
+    # path('password_reset/', views.password_reset, name = 'password_reset')
+    # path('accounts/', include('django.contrib.auth.urls'), name = 'password_reset')
+    path("password_reset/", views.password_reset_request, name="password_reset"),
+    path('password_reset/done/', auth_views.PasswordResetDoneView.as_view(template_name='todo/password/password_reset_done.html'), name='password_reset_done'),
+    path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name="todo/password/password_reset_confirm.html"), name='password_reset_confirm'),
+    path('reset/done/', auth_views.PasswordResetCompleteView.as_view(template_name='todo/password/password_reset_complete.html'), name='password_reset_complete'),
+    
 ]
