@@ -1,18 +1,12 @@
 import os
-
-from pickle import GET
 from time import timezone
+
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
-from django.contrib.auth.forms import PasswordResetForm
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordResetForm
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
-from todo.models import ToDo
-from .forms import FormTodo
-from .models import ToDo
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 from django.template.loader import render_to_string
@@ -21,6 +15,11 @@ from django.utils.http import urlsafe_base64_encode
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
 from django.contrib import messages
+
+from todo.models import ToDo
+from .forms import FormTodo
+from .models import ToDo, UserCreationForm
+from .utils import AuthenticationForm, PasswordResetForm
 
 
 # Create your views here.
