@@ -1,6 +1,7 @@
 from django.forms import ModelForm
-from .models import ToDo
 from django import forms
+
+from .models import ToDo
 
 
 class FormTodo(ModelForm):
