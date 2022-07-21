@@ -1,5 +1,5 @@
 # ToDoWOO
-
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 ### Simply Your Todos
 #### Link: https://denisk.pythonanywhere.com
 
